@@ -1,5 +1,5 @@
 let app = {
-    apiRootUrl: 'https://benoclock.github.io/S07-todolist',
+    apiRootUrl: 'http://localhost:8080',
     
     init: function() {
         console.log('Méthode init');

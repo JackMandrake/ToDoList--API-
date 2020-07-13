@@ -15,7 +15,7 @@ let category = {
         };
 
         // On déclenche la requête HTTP (via le moteur sous-jacent Ajax)
-        fetch(app.apiRootUrl + '/categories.json', fetchOptions)
+        fetch(app.apiRootUrl + '/categories', fetchOptions)
         // Ensuite, lorsqu'on reçoit la réponse au format JSON
         .then(function(response) {
             // On convertit cette réponse en un objet JS et on le retourne

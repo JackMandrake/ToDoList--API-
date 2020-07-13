@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="313" height="463" view_box="0 0 313 463"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Thu, 09 Jul 2020 07:27:14</desc>
+
+<rect id="frame" x="0" y="0" width="313" height="463" fill="#ffffbf" stroke="none" stroke-width="0"/>
+
+<!-- Association CAN UPDATE/ARCHIVE -->
+<line x1="86" y1="303" x2="86" y2="34" stroke="#74add1" stroke-width="2"/>
+<text x="91.0" y="219" fill="#d73027" font-family="Verdana" font-size="12">N,N</text>
+<line x1="86" y1="143" x2="86" y2="34" stroke="#74add1" stroke-width="2"/>
+<text x="91.0" y="76" fill="#d73027" font-family="Verdana" font-size="12">N,N</text>
+<g id="association-CAN UPDATE/ARCHIVE">
+	<path d="M 149 9 a 14 14 90 0 1 14 14 V 34 h -154 V 23 a 14 14 90 0 1 14 -14" fill="#abd9e9" stroke="#abd9e9" stroke-width="0"/>
+	<path d="M 163 34.0 v 11 a 14 14 90 0 1 -14 14 H 23 a 14 14 90 0 1 -14 -14 V 34.0 H 154" fill="#e0f3f8" stroke="#e0f3f8" stroke-width="0"/>
+	<rect x="9" y="9" width="154" height="50" fill="none" rx="14" stroke="#74add1" stroke-width="2"/>
+	<line x1="9" y1="34" x2="163" y2="34" stroke="#74add1" stroke-width="1"/>
+	<text x="16" y="26.7" fill="#000000" font-family="Verdana" font-size="12">CAN UPDATE/ARCHIVE</text>
+	<text x="16" y="51.8" fill="#000000" font-family="Verdana" font-size="12">visitor</text>
+</g>
+
+<!-- Association TODO/COMPLETE -->
+<line x1="86" y1="303" x2="86" y2="429" stroke="#74add1" stroke-width="2"/>
+<text x="91.0" y="396" fill="#d73027" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-TODO/COMPLETE">
+	<path d="M 133 404 a 14 14 90 0 1 14 14 V 429 h -122 V 418 a 14 14 90 0 1 14 -14" fill="#abd9e9" stroke="#abd9e9" stroke-width="0"/>
+	<path d="M 147 429.0 v 11 a 14 14 90 0 1 -14 14 H 39 a 14 14 90 0 1 -14 -14 V 429.0 H 122" fill="#e0f3f8" stroke="#e0f3f8" stroke-width="0"/>
+	<rect x="25" y="404" width="122" height="50" fill="none" rx="14" stroke="#74add1" stroke-width="2"/>
+	<line x1="25" y1="429" x2="147" y2="429" stroke="#74add1" stroke-width="1"/>
+	<text x="32" y="421.7" fill="#000000" font-family="Verdana" font-size="12">TODO/COMPLETE</text>
+	<text x="32" y="446.8" fill="#000000" font-family="Verdana" font-size="12">visitor</text>
+</g>
+
+<!-- Association CAN CREATE/DELETE -->
+<line x1="86" y1="303" x2="232" y2="303" stroke="#74add1" stroke-width="2"/>
+<text x="132" y="320.0" fill="#d73027" font-family="Verdana" font-size="12">1,N</text>
+<line x1="86" y1="143" x2="232" y2="303" stroke="#74add1" stroke-width="2"/>
+<text x="137" y="192.024925036" fill="#d73027" font-family="Verdana" font-size="12">1,N</text>
+<g id="association-CAN CREATE/DELETE">
+	<path d="M 290 278 a 14 14 90 0 1 14 14 V 303 h -144 V 292 a 14 14 90 0 1 14 -14" fill="#abd9e9" stroke="#abd9e9" stroke-width="0"/>
+	<path d="M 304 303.0 v 11 a 14 14 90 0 1 -14 14 H 174 a 14 14 90 0 1 -14 -14 V 303.0 H 144" fill="#e0f3f8" stroke="#e0f3f8" stroke-width="0"/>
+	<rect x="160" y="278" width="144" height="50" fill="none" rx="14" stroke="#74add1" stroke-width="2"/>
+	<line x1="160" y1="303" x2="304" y2="303" stroke="#74add1" stroke-width="1"/>
+	<text x="167" y="295.7" fill="#000000" font-family="Verdana" font-size="12">CAN CREATE/DELETE</text>
+	<text x="167" y="320.8" fill="#000000" font-family="Verdana" font-size="12">visitor</text>
+</g>
+
+<!-- Entity TASKS -->
+<g id="entity-TASKS">
+	<g id="frame-TASKS">
+		<rect x="45" y="227" width="82" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="45" y="252.0" width="82" height="127" fill="#fee090" stroke="#fee090" stroke-width="0"/>
+		<rect x="45" y="227" width="82" height="152" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="45" y1="252" x2="127" y2="252" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="65" y="244.7" fill="#000000" font-family="Verdana" font-size="12">TASKS</text>
+	<text x="50" y="269.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="50" y1="272" x2="62" y2="272" stroke="#000000" stroke-width="1"/>
+	<text x="50" y="286.7" fill="#000000" font-family="Verdana" font-size="12">title</text>
+	<text x="50" y="303.8" fill="#000000" font-family="Verdana" font-size="12">completion</text>
+	<text x="50" y="320.8" fill="#000000" font-family="Verdana" font-size="12">category_id</text>
+	<text x="50" y="337.8" fill="#000000" font-family="Verdana" font-size="12">status</text>
+	<text x="50" y="354.8" fill="#000000" font-family="Verdana" font-size="12">created_at</text>
+	<text x="50" y="371.8" fill="#000000" font-family="Verdana" font-size="12">updated_at</text>
+</g>
+
+<!-- Entity CATEGORIES -->
+<g id="entity-CATEGORIES">
+	<g id="frame-CATEGORIES">
+		<rect x="40" y="84" width="92" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="40" y="109.0" width="92" height="93" fill="#fee090" stroke="#fee090" stroke-width="0"/>
+		<rect x="40" y="84" width="92" height="118" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="40" y1="109" x2="132" y2="109" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="45" y="101.7" fill="#000000" font-family="Verdana" font-size="12">CATEGORIES</text>
+	<text x="45" y="126.7" fill="#000000" font-family="Verdana" font-size="12">id</text>
+	<line x1="45" y1="129" x2="57" y2="129" stroke="#000000" stroke-width="1"/>
+	<text x="45" y="143.8" fill="#000000" font-family="Verdana" font-size="12">name</text>
+	<text x="45" y="160.8" fill="#000000" font-family="Verdana" font-size="12">status</text>
+	<text x="45" y="177.8" fill="#000000" font-family="Verdana" font-size="12">created_at</text>
+	<text x="45" y="194.8" fill="#000000" font-family="Verdana" font-size="12">updated_at</text>
+</g>
+</svg>

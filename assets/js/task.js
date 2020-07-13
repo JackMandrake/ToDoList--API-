@@ -14,7 +14,7 @@ let task = {
         };
 
         // On déclenche la requête HTTP (via le moteur sous-jacent Ajax)
-        fetch(app.apiRootUrl + '/tasks.json', fetchOptions)
+        fetch(app.apiRootUrl + '/tasks', fetchOptions)
         // Ensuite, lorsqu'on reçoit la réponse au format JSON
         .then(function(response) {
             // On convertit cette réponse en un objet JS et on le retourne
@@ -39,7 +39,7 @@ let task = {
                 console.log(singleTask);
 
                 let singleTaskCategoryName = category.categoriesName[singleTask.category_id];
-                task.createNewTask(singleTask.title,singleTaskCategoryName);
+                task.createNewTask(singleTask.id, singleTask.title,singleTaskCategoryName);
             }
 
         });
@@ -48,7 +48,7 @@ let task = {
     /**
      * Méthode permettant de créer une nouvelle tâche et de l'ajouter dans le DOM
      */
-    createNewTask: function(title,categoryName) {
+    createNewTask: function(taskId, title,categoryName) {
 
         // On crée l'élément correspondant à une nouvelle tâche à partir d'un template
         let newTaskTemplateElement = document.getElementById('task-template');
@@ -62,6 +62,7 @@ let task = {
 
         // On utilise dataset : https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/dataset
         newTaskElement.querySelector('.task').dataset.category = categoryName;
+        newTaskElement.querySelector('.task').dataset.taskId = taskId;
         newTaskElement.querySelector('.task__category p').textContent = categoryName;
  
         // On ajoute les écouteurs d'évènements sur cette tâche

@@ -1,0 +1,9 @@
+CAN UPDATE/ARCHIVE, NN TASKS, NN CATEGORIES: visitor
+
+CATEGORIES: id, name, status, created_at, updated_at
+
+TASKS: id, title, completion, category_id, status, created_at, updated_at
+CAN CREATE/DELETE, N1 TASKS, N1 CATEGORIES: visitor
+
+
+TODO/COMPLETE, 1N TASKS: visitor
