@@ -139,7 +139,7 @@ let task = {
      * => alors on pourra mettre à jour l'interface côté front et passer la tâche
      * en complete
      */
-    completeTask: function(taskElement) {
+    /*completeTask: function(taskElement) {
 
         // On récupère l'id de la tâche qu'on avait stocké dans un attribut data
         // au moment de la création de la tâche dans le DOM
@@ -186,6 +186,89 @@ let task = {
                 }
             }
         )
+    },*/
+    completeTask: function(taskElement) {
+        let taskData = {
+            completion: 100
+        };
+        task.apiPatchTask(taskElement, taskData);
+    },
+
+    incompleteTask: function(taskElement) {
+        let taskData = {
+            completion: 0
+        };
+        task.apiPatchTask(taskElement, taskData);
+    },
+
+    updateTaskTitle: function(taskElement, newTaskTitle) {
+        let taskData = {
+            title: newTaskTitle
+        };
+        task.apiPatchTask(taskElement, taskData);
+    },
+
+    /**
+     * Cette méthode va à partir d'un élément tâche faire un requête Ajax
+     * à l'API pour valider la complétion côté BDD puis si c'est ok côté API
+     * => alors on pourra mettre à jour l'interface côté front et passer la tâche
+     * en incomplete
+     */
+    apiPatchTask: function(taskElement, taskData = {}) {
+
+        // On récupère l'id de la tâche qu'on avait stocké dans un attribut data
+        // au moment de la création de la tâche dans le DOM
+        let taskId = taskElement.dataset.taskId;
+
+        // On stocke les données à transférer
+        let data = taskData;
+        
+        // On prépare les entêtes HTTP (headers) de le requête
+        // afin de spécifier que les données sont en JSON
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        // On consomme l'API pour ajouter en DB
+        let fetchOptions = {
+            method: 'PATCH',
+            mode: 'cors',
+            cache: 'no-cache',
+            // On ajoute les headers dans les options
+            headers: myHeaders,
+            // On ajoute les données, encodée en JSON, dans le corps de la requête
+            body: JSON.stringify(data)
+        };
+        
+        // Exécuter la requête HTTP via XHR
+        fetch(app.apiRootUrl + '/tasks/' + taskId, fetchOptions)
+        .then(
+            function(response) {
+                console.log(response);
+                // Si HTTP status code à 200 => OK
+                if (response.status == 200) {
+                    console.log('Tâche mise à jour avec succès');
+        
+                    // TODO d'autres choses, certainement
+                    // Si on a mis à jour la complétion ?
+                    // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_typeof
+                    if (typeof taskData.completion != 'undefined') {
+                        // alors =>
+                        task.setTaskCompletion(taskElement, taskData.completion);
+                    }
+
+                    // Si on a mis à jour le titre ?
+                    if (typeof taskData.title != 'undefined') {
+                        // alors => 
+                        // On cache l'input et on réaffiche le titre
+                        task.disableTaskTitleEdition(taskElement);
+                        task.setTaskTitle(taskElement, taskData.title);
+                    }
+                }
+                else {
+                    alert('La mise à jour de la tâche a échoué');
+                }
+            }
+        )
     },
 
     /**
@@ -209,4 +292,18 @@ let task = {
             taskElement.classList.replace('task--complete','task--todo');
         }
     },
+
+    disableTaskTitleEdition: function(taskElement) {
+        taskElement.classList.remove('task--edit');
+    },
+
+    enableTaskTitleEdition: function(taskElement) {
+        taskElement.classList.add('task--edit');
+    },
+
+    setTaskTitle: function(taskElement, newTaskTitle) {
+        // On récupère l'élément contenant le titre (balise <p>)
+        // On modifie le contenu de la balise <p>
+        taskElement.querySelector('.task__name-display').textContent = newTaskTitle;
+    }
 };

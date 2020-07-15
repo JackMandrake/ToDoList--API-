@@ -2,7 +2,7 @@ let app = {
     apiRootUrl: 'http://localhost:8080',
     
     init: function() {
-        //console.log('Méthode init');
+        console.log('Méthode init');
 
         // On ajoute nos écouteurs d'évènements sur nos tâches
         // app.bindTasksEvents();
@@ -69,10 +69,13 @@ let app = {
         let taskCompleteButtonElement = 
             singleTaskElement.querySelector('.task__button--validate');
 
-        //console.log('Task Complete Button : ',taskCompleteButtonElement);
+        console.log('Task Complete Button : ',taskCompleteButtonElement);
 
         // On ajoute l'écouteur d'évènement sur le bouton complete
         taskCompleteButtonElement.addEventListener('click',handler.handleCompleteButtonClick);
+
+        // On ajoute l'écouteur d'évènement sur le bouton incomplete
+        singleTaskElement.querySelector('.task__button--incomplete').addEventListener('click',handler.handleIncompleteButtonClick);
     },
 };
 

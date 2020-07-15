@@ -45,6 +45,24 @@ let handler = {
     },
 
     /**
+     * Méthode gérant le click sur bouton pour marque une tâche comme incomplète
+     */
+    handleIncompleteButtonClick: function(evt) {
+        console.log('handleIncompleteButtonClick');
+
+        // On récupère le bouton à l'origine de l'évènement
+        let taskIncompleteButtonElement = evt.currentTarget;
+
+        // Pour changer l'affichage de la tâche, on a besoin de l'élément tâche
+        // https://developer.mozilla.org/fr/docs/Web/API/Element/closest
+        // closest va checher le premier ancêtre qui correspond au sélecteur fourni en argument
+        let taskElement = taskIncompleteButtonElement.closest('.task');
+
+        // On délègue à une méthode dédiée le fait de marquer la tâche comme incomplète
+        task.incompleteTask(taskElement);
+    },
+
+    /**
      * Méthode gérant la validation de la modification du titre d'une tâche
      * avec la touche "entrée"
      */
@@ -73,15 +91,7 @@ let handler = {
         // On récupère la valeur de l'input
         let taskTitleValue = taskInputElement.value;
 
-        // On cache l'input et on réaffiche le titre
-        let taskElement = taskInputElement.closest('.task');
-        taskElement.classList.remove('task--edit');
-
-        // On récupère l'élément contenant le titre (balise <p>)
-        // https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling
-        let taskTitleElement = taskInputElement.previousElementSibling;
-        // On modifie le contenu de la balise <p>
-        taskTitleElement.textContent = taskTitleValue;
+        task.updateTaskTitle(taskInputElement.closest('.task'), taskTitleValue);
     },
 
     /**
