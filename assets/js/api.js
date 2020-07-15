@@ -1,7 +1,7 @@
 let api = {
     
     init: function() {
-        console.log('Méthode init');
+      //  console.log('Méthode init');
         api.loadCategories();
         api.loadTasks();
     },
@@ -67,7 +67,7 @@ loadCategories: function(){
         // précédemment convertie en objet JS.
         function(jsonResponse) {
         // Désormais, on a accès aux données facilement et on peut travailler avec :
-        console.log(jsonResponse);
+        //console.log(jsonResponse);
     
         // TODO, utiliser ces données pour modifier la page, afficher les données, etc.
         for (var i = 0; i < jsonResponse.length; i++) {
@@ -149,7 +149,7 @@ loadTasks: function(){
         // précédemment convertie en objet JS.
         function(jsonResponse) {
         // Désormais, on a accès aux données facilement et on peut travailler avec :
-        console.log(jsonResponse);
+       // console.log(jsonResponse);
     
         // TODO, utiliser ces données pour modifier la page, afficher les données, etc.
         for (var i = 0; i < jsonResponse.length; i++) {

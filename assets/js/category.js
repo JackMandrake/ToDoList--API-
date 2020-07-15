@@ -42,6 +42,7 @@ let category = {
                 // On crée la nouvelle option
                 let newOptionElement = document.createElement('option');
                 newOptionElement.textContent = singleCategory.name;
+                newOptionElement.value = singleCategory.id;
 
                 // On vient placer la nouvelle option dans le select
                 selectElement.append(newOptionElement);

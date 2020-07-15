@@ -18,10 +18,10 @@ let handler = {
         let newTaskTitle = formElement.querySelector('.task__name-edit').value;
 
         // On vient préciser la catégorie dans le clone de la tâche
-        let newTaskCategoryName = formElement.querySelector('.task__category select').value;
+        let newTaskCategoryId = formElement.querySelector('.task__category select').value;
 
-        // On demande la création de la tâche dans le DOM
-        task.createNewTask(newTaskTitle,newTaskCategoryName);
+        // On fait un appel à l'API pour demander l'ajout d'une nouvelle tâche dans la BDD
+        task.addNewTask(newTaskTitle, newTaskCategoryId);
     },
 
     /**
@@ -39,13 +39,9 @@ let handler = {
         // closest va checher le premier ancêtre qui correspond au sélecteur fourni en argument
         let taskElement = taskCompleteButtonElement.closest('.task');
         console.log(taskElement);
-        // On maintenant modifier les classes de la tâche (taskElement)
-        // pour replace, on indique seulement le nom de la classe, sans le '.' car ici, on n'utilise
-        // pas de sélecteur css
-        taskElement.classList.replace('task--todo','task--complete');
-        // replace est l'équivalent des 2 instructions suivantes :
-        // taskElement.classList.remove('task--todo');
-        // taskElement.classList.add('task--complete');
+
+        // On délègue à une méthode dédiée le fait de compléter la tâche
+        task.completeTask(taskElement);
     },
 
     /**
